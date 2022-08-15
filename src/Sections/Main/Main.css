@@ -1,0 +1,115 @@
+
+.rasm{
+  height: 400px !important; 
+  border-radius: 0;
+  
+}
+img{
+  border-radius: .5rem;
+}
+.orqa{
+  background-color: rgba(51, 51, 201, 0.521);
+}
+.card{
+  border: none !important;
+}
+.search_item{
+  width: 1200px;
+  padding: 8px;
+  border-radius: 15px;
+  border: 1px solid white;
+  margin-left: 60px ;
+  margin-top: 100px;
+  outline: none;
+}
+
+.card-img{
+  object-fit: cover;
+}
+
+.search_tugma{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1.1rem;
+  margin-top:227px;
+  /* padding: 10px; */
+  border-radius: 15px !important;
+  background-color: #1BD1B1 !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+/* button */
+
+.span_p{
+  border: 1px solid #032541;
+  display: flex;
+  margin-left: 30px;
+  border-radius: 20px;
+  max-width: auto;
+  display: inline-block;
+  padding: 3px 0;
+}
+a{
+  color: #000;
+}
+
+.span_but{
+  border: 1px solid #032541;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #1BD1B1;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.span_1{
+  margin-left: 10px;
+}
+.sup{
+  font-size: 8px;
+}
+
+.sircle{
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  top: 238px;
+  left: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.calso{
+  border: 2px solid rgba(255, 255, 0, 0.617);
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.main_cardlar{
+  max-width: 100%;
+  overflow-x: auto;
+  display: flex;
+  height: 455px;
+}
+.main_cardlar a{
+  color: #032541;
+  text-decoration: none;
+}
+.main_cardlar a:hover{
+  color: #032541;
+}
+.back-photo{
+  height: 250px;
+  width: 170px;
+}

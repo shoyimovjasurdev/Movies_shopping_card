@@ -1,0 +1,52 @@
+
+
+
+.back{
+  max-height: 80vh;
+  background-image: linear-gradient(to right, rgba(1,13,25, .70) 150px, rgba(1,13,25, .20) 100%);
+  border: 2px #032541 solid;
+  
+}
+
+.bg__box{
+  max-height: 80vh;
+
+}
+
+.backdrop_path img{
+  max-height: 60vh;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  border-radius: 0.5rem;
+}
+
+.result__text{
+  color: #fff;
+}
+
+.progress {
+  min-height: 10rem;
+  align-items: center;
+  text-align: center;
+}
+
+.progress p{
+  border: 5px red solid;
+  color: #000;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 50%;
+
+}
+
+.icon{
+  margin: .5rem;
+}
+.icon i {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #032541;
+  border-radius: 50%;
+}

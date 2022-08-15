@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #032541;
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+  background-color: #032541 !important;
+  color: #fff;
+}
+
+
+.collapse{
+  align-items: center;
+  
+}
+.manNav{
+  list-style-type: none;
+  margin-right: 1rem;
+  
+
+}
+.manNav:hover .supportNav{
+  display: block;
+
+}
+
+.supportNav{
+  list-style-type: none;
+  position: absolute;
+  text-align: start;
+  padding: 0;
+  display: none;
+  z-index: 4;
+  border: #ccc solid 1px;
+  background-color: #fff;
+  border-radius: .3rem;
+   
+}
+
+.supportNav :nth-child(1){
+  margin-top: 1rem;
+}
+.supportNav :nth-child(4){ 
+  margin-bottom: 1rem;
+}
+.supportNav li{
+  padding: .2rem 4rem .2rem 1rem; 
+}
+.supportNav li:hover{
+  background-color: #ddd;
+}
+
+
+
+.navigationBar >a{
+  margin-top: 0.5rem;
+  color: #01b4e4;
+  text-decoration: none;
+}
+.navigationBar >a:hover{
+  color: #01b4e4;
+  text-decoration: none;
+
+}
+
+.supportNav a{
+  color: #000;
+  text-decoration: none;
+}
+.supportNav a:hover{
+  color: #000;
+
+}
