@@ -12,6 +12,9 @@ import On_tv from '../Tv_shows/On_tv'
 import Top_rated1 from '../Tv_shows/Top_rated1'
 import Result from '../Result/Result'
 import ToResult from "../Result/TvResult"
+import People from '../People/People'
+import Like from "../like and save/Like"
+import Foter from '../../Components/Footer/Foter'
 
 export default function App() {
   return (
@@ -29,7 +32,10 @@ export default function App() {
         <Route exac path='/top_rated1' element={<Top_rated1/>}/>
         <Route exac path='/result/:id' element={<Result/>}/>
         <Route exac path='/tvresult/:id' element={<ToResult/>}/>
+        <Route exac path="/people" element={<People/>}/>
+        <Route exac path='/like' element={<Like/>}/>
       </Routes>
+      <Foter/>
     </div>
   )
 }

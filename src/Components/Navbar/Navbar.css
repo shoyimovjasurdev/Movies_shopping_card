@@ -73,5 +73,27 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light{
 }
 .supportNav a:hover{
   color: #000;
+}
 
+.likeIcon{
+  display: flex;
+}
+
+.likeIcon .like{
+  color: red;
+  position: relative;
+}
+
+.likeIcon .like sup{
+  position: absolute;
+  color: #fff;
+}
+.likeIcon .save{
+  color: #01b4e4;
+  margin-left: 2rem;
+}
+
+.collapse{
+  display: flex;
+  justify-content: space-between;
 }

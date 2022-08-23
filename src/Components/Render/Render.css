@@ -9,7 +9,11 @@ body{
 .mainSection{
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+.navbar{
+  cursor: pointer;
 }
 
 .cardSection.card{

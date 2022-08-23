@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main{
+  text-align: center;
+  background-color: #032541;
+  color: #fff;
+  padding: 2rem 0 5rem 0;
+}
+
+.item button{
+  border-radius: .5rem;
+  margin-top: 3.5rem;
+  width: 100%;
+  border: 0;
+  padding: .5rem 2rem;
+  color: #01b4e4;
+}
+.item p,h5{
+  padding: 0;
+  margin: 0;
+
+}
+

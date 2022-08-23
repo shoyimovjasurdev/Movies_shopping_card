@@ -11,6 +11,10 @@ const Main = () => {
 
     const [popular, setPopular] = useState([])
     const [popular2, setPopular2] = useState(false)
+    
+
+    const [popular3, setPopular3] = useState([])
+    const [popular4, setPopular4] = useState(false)
 
     useEffect(() => {
         getData()
@@ -23,9 +27,7 @@ const Main = () => {
         return err.json()
     })
     setPopular(result.results)
-    console.log(result);
     }
-
     }, []);
     
     useEffect(() => {
@@ -39,10 +41,38 @@ const Main = () => {
         return err.json()
     })
     setPopular2(result.results)
-    console.log(result);
     }
-
     }, []);
+
+    useEffect(() => {
+        getData3()
+    async function getData3() {
+        let result = await fetch('https://api.themoviedb.org/3/tv/airing_today?api_key=51cc7f5f459038d8f6fd27150449d6a1&language=en-US&page=1')
+        
+    .then(ress => {
+        return ress.json()
+    })
+    .catch(err =>{
+        return err.json()
+    })
+    setPopular3(result.results)
+    }
+    }, []);
+
+    useEffect(() => {
+        getData4()
+    async function getData4() {
+        let result = await fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=51cc7f5f459038d8f6fd27150449d6a1&language&language=en-US&page=1')
+    .then(ress => {
+        return ress.json()
+    })
+    .catch(err =>{
+        return err.json()
+    })
+    setPopular4(result.results)
+    }
+    }, []);
+
 
     function turn1(){
         document.querySelector(".two").classList.add("d-none")
@@ -56,6 +86,21 @@ const Main = () => {
         color1 === "#032541" ? setColor1("rgba(0, 0, 0, 0)"): setColor1("rgba(0, 0, 0, 0)")
         color2 === "rgba(0, 0, 0, 0)" ? setColor2("#032541") : setColor2("#032541")
     }
+
+    function turn3(){
+        document.querySelector(".two1").classList.add("d-none")
+        document.querySelector(".one1").classList.remove("d-none")
+        color1 === "#032541" ? setColor1("#032541"): setColor1("#032541")
+        color2 === "rgba(0, 0, 0, 0)" ? setColor2("rgba(0, 0, 0, 0)"): setColor2("rgba(0, 0, 0, 0)") 
+    }
+    function turn4(){
+        document.querySelector(".two1").classList.remove("d-none")
+        document.querySelector(".one1").classList.add("d-none")
+        color1 === "#032541" ? setColor1("rgba(0, 0, 0, 0)"): setColor1("rgba(0, 0, 0, 0)")
+        color2 === "rgba(0, 0, 0, 0)" ? setColor2("#032541") : setColor2("#032541")
+    }
+
+    
     return (
         <div className='mb-5 container'>
             <div className="main_back">
@@ -104,7 +149,7 @@ const Main = () => {
                   )
               }
             </div>
-            <div className="d-flex main_cardlar one">
+            <div className="d-flex main_cardlar one mb-5">
                 {
                   (popular.length > 0) ? popular.map((item,index ) => {
                       return (
@@ -115,6 +160,55 @@ const Main = () => {
                                   <p className='mb-0 sircle'><p className='calso'>{item.vote_average * 10}<sup className='sup'>%</sup></p></p>
                                   <h5 className='pt-4'>{item.title}</h5>
                                   <p className='p-1 fw-bold'>{item.release_date}</p>
+                              </Link>
+                          </div>
+                          </>
+                      )
+                  }) : (
+                      <h3>Loading..</h3>
+                  )
+                }
+            </div>
+
+
+            <p className='span_p my-4 fw-bold mt-5'>
+                <span onClick={() => turn3()} style = {{backgroundColor : color1}} className='span_but'>Today</span>
+                <span onClick={() => turn4() } className='fw-bold span_but span_1' style={ {backgroundColor: color2} }>This Week</span>
+            </p>
+              <p><span onClick={() => turn4() } className='fw-bold span_but span_1' style={ {backgroundColor: color2} }>
+              This Week
+              </span></p>
+            <div className="d-flex main_cardlar two1 d-none">
+              {
+                  (popular3.length > 0) ? popular3.map((item,index ) => {
+                      return (
+                          <>
+                            <div key={index}>
+                                <Link state={{id:item.id}} to={`/tvresult/${item.id}`} className="page border-light card my-3 p-2">
+                                    <img className='back-photo'  src={halfimg + item.poster_path} alt="" />
+                                    <p className='mb-0 sircle'><p className='calso'>{item.vote_average * 10}<sup className='sup'>%</sup></p></p>
+                                    <h5 className='pt-4'>{item.name}</h5>
+                                    <p className='p-1 fw-bold'>{item.first_air_date}</p>
+                                </Link>
+                            </div>
+                          </>
+                      )
+                  }) : (
+                      <h3>Loading..</h3>
+                  )
+              }
+            </div>
+            <div className="d-flex main_cardlar one1">
+                {
+                  (popular4.length > 0) ? popular4.map((item,index ) => {
+                      return (
+                          <>
+                          <div key={index}>
+                              <Link state={{id:item.id}} to={`/tvresult/${item.id}`} className="page border-light card my-3 p-2">
+                                  <img className='back-photo'  src={halfimg + item.poster_path} alt="" />
+                                  <p className='mb-0 sircle'><p className='calso'>{item.vote_average * 10}<sup className='sup'>%</sup></p></p>
+                                  <h5 className='pt-4'>{item.name}</h5>
+                                  <p className='p-1 fw-bold'>{item.first_air_date}</p>
                               </Link>
                           </div>
                           </>

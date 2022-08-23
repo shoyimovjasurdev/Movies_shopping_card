@@ -2,12 +2,15 @@ import React,{useState,useEffect} from 'react'
 import Axios from "axios"
 import "./Render.css"
 import {Link, useNavigate} from "react-router-dom"
+import {useDispatch} from "react-redux"
 
 export default function Render(props) {
   const [arre,setArre]=useState([])
   const [sum, setSum]=useState(10)
   const img_url = "https://image.tmdb.org/t/p/w500"
   const nav = useNavigate()
+  const [display, setDisplay]=useState(false)
+  const dispatch = useDispatch()
 
   useEffect(()=>{
     getStudent()
@@ -23,6 +26,10 @@ export default function Render(props) {
   })
   }
 
+  const likeFun=(e)=>{
+    dispatch({type:"addLike",piload:e})
+  }
+
   return (
     <div className='container'>
       <div className='mainSection'>
@@ -34,11 +41,22 @@ export default function Render(props) {
                   <Link state={{id:e.id}} to={`/result/${e.id}`}>
                     <img src={img_url+e.poster_path } alt="Rosim" />
                   </Link>
-                  <div className='menuIcon'>
-                    <i class="fs-5 fa-solid fa-ellipsis"></i>
-                  </div>
-                <h3 className=''>{e.original_title}</h3>
-                <h3 className=''>{e.name}</h3>
+                  {
+                (display)?(
+                  <div  className={`saveIcon ${display}`}>
+                  <i className="fs-6 fa-brands fa-stack-exchange"></i>
+                  <i onClick={()=>likeFun(e)} className="fs-6 fa-solid fa-heart"></i>
+                  <i className="fs-6 fa-solid fa-bookmark"></i>
+                  <i className="fs-6 fa-solid fa-star"></i>
+                </div>
+                ):
+                (
+                  <h3></h3>
+                )
+               }
+                <div onClick={()=>setDisplay(!display)} className='menuIcon'>
+                    <i className="fs-5 fa-solid fa-ellipsis"></i>
+                </div>
                   <p>{e.first_air_date}</p>
                   <p>{e.release_date}</p>
               </div>
