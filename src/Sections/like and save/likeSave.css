@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cardList img{
+  width: 250px;
+
+}
+
+.cardssection{
+  display: grid;
+  background-color: #fff;
+  padding: 2rem 100px;
+
+}

@@ -9,8 +9,8 @@ export default function Render(props) {
   const [sum, setSum]=useState(10)
   const img_url = "https://image.tmdb.org/t/p/w500"
   const nav = useNavigate()
-  const [display, setDisplay]=useState(false)
   const dispatch = useDispatch()
+  const [detel,setDetel] =useState("d-none")
 
   useEffect(()=>{
     getStudent()
@@ -26,9 +26,26 @@ export default function Render(props) {
   })
   }
 
+  console.log(arre)
+
   const likeFun=(e)=>{
     dispatch({type:"addLike",piload:e})
   }
+
+  function saveFun(e){
+    dispatch({type:"addSave",piload:e})
+  }
+
+  
+    function btnfun(){
+      if(detel=="d-block"){
+        setDetel("d-none")
+      }else{
+        setDetel("d-block")
+      }
+    }
+
+  
 
   return (
     <div className='container'>
@@ -41,24 +58,19 @@ export default function Render(props) {
                   <Link state={{id:e.id}} to={`/result/${e.id}`}>
                     <img src={img_url+e.poster_path } alt="Rosim" />
                   </Link>
-                  {
-                (display)?(
-                  <div  className={`saveIcon ${display}`}>
-                  <i className="fs-6 fa-brands fa-stack-exchange"></i>
-                  <i onClick={()=>likeFun(e)} className="fs-6 fa-solid fa-heart"></i>
-                  <i className="fs-6 fa-solid fa-bookmark"></i>
-                  <i className="fs-6 fa-solid fa-star"></i>
+               {
+                <div  className={`saveIcon ${detel}` }>
+                  <div><i className="fs-6 fa-brands fa-stack-exchange"></i></div>
+                  <div><i onClick={()=>likeFun(e)} className="fs-6 fa-solid fa-heart"></i></div>
+                  <div><i onClick={()=>saveFun(e)}  className="fs-6 fa-solid fa-bookmark"></i></div>
+                  <div><i className="fs-6 fa-solid fa-star"></i></div>
                 </div>
-                ):
-                (
-                  <h3></h3>
-                )
                }
-                <div onClick={()=>setDisplay(!display)} className='menuIcon'>
-                    <i className="fs-5 fa-solid fa-ellipsis"></i>
+                <div  onClick={()=>btnfun()}className='menuIcon'>
+                    <i  className="fs-5 fa-solid fa-ellipsis"></i>
                 </div>
-                  <p>{e.first_air_date}</p>
-                  <p>{e.release_date}</p>
+                  <h3>{e.title+""+e.name}</h3>
+                  <p>{e.release_date+""+e.first_air_date}</p>
               </div>
             )
           })

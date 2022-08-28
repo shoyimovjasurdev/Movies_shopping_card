@@ -1,31 +1,27 @@
-let number = JSON.parse(localStorage.getItem("arre"))
-const initialState =number 
-
 let number2 = JSON.parse(localStorage.getItem("arre2"))
 const initialState2 =number2 
 
-function cardReducer(state=initialState,action){
-  if(action.type==="addLike"){
+function saveReduser(state=initialState2,action){
+  if(action.type==="addSave"){
     let creatDate = state
-    let lekeItem= JSON.parse(localStorage.getItem("arre"))
+    let lekeItem= JSON.parse(localStorage.getItem("arre2"))
     lekeItem.push(action.piload)
     creatDate = lekeItem
     let arre = JSON.stringify(lekeItem)
-    localStorage.setItem("arre",arre)
+    localStorage.setItem("arre2",arre)
     return state = creatDate
   };
 
-  if(action.type==="delItem"){
+  if(action.type==="delSave"){
     let creatDate = state
-    let lekeItem= JSON.parse(localStorage.getItem("arre"))
+    let lekeItem= JSON.parse(localStorage.getItem("arre2"))
     lekeItem.splice(action.piload,1)
     creatDate = lekeItem
     let arre = JSON.stringify(lekeItem)
-    localStorage.setItem("arre",arre)
+    localStorage.setItem("arre2",arre)
     return state = creatDate
   };
 
 return state
 }
-export {cardReducer}
-
+export {saveReduser}

@@ -1,5 +1,5 @@
 import React from 'react'
-import Render from "../../Components/Render/TvRender"
+import Render from "../../Components/Render/Render"
 
 export default function On_tv() {
   return (

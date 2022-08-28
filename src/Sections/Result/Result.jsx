@@ -16,12 +16,13 @@ export default function Result() {
   Axios.get(`https://api.themoviedb.org/3/movie/${loc.state.id}?api_key=51cc7f5f459038d8f6fd27150449d6a1&language=en-US`)
     .then(ress=>{
       setdete(ress.data)
+      
       })
     .catch(err =>{
       setdete(err)
     })
   }
-  console.log(dete)
+  console.log(loc.state.id)
   
   return (
     <div class="card text-bg-light m-0 p-0 ">

@@ -51,7 +51,7 @@ export default function Navbar() {
               ):(
                 0
               )}</sup></i></Link></h4>
-              <h4><Link to="/like"><i class="fs-3 fa-solid fa-bookmark save"></i></Link></h4>
+              <h4><Link to="/save"><i class="fs-3 fa-solid fa-bookmark save"></i></Link></h4>
             </div>
             
           </div>

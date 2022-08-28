@@ -15,6 +15,8 @@ import ToResult from "../Result/TvResult"
 import People from '../People/People'
 import Like from "../like and save/Like"
 import Foter from '../../Components/Footer/Foter'
+import Search from '../../Search/Search'
+import Save from '../like and save/Save'
 
 export default function App() {
   return (
@@ -34,6 +36,10 @@ export default function App() {
         <Route exac path='/tvresult/:id' element={<ToResult/>}/>
         <Route exac path="/people" element={<People/>}/>
         <Route exac path='/like' element={<Like/>}/>
+        <Route exac path='/save' element={<Save/>}/>
+      <Route exac path='/search/:id' element={<Search/>}/>
+
+        
       </Routes>
       <Foter/>
     </div>

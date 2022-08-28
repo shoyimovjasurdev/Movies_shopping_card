@@ -16,6 +16,7 @@ const Main = () => {
     const [popular3, setPopular3] = useState([])
     const [popular4, setPopular4] = useState(false)
 
+    const[search, setSearch] = useState([])
     useEffect(() => {
         getData()
     async function getData() {
@@ -113,9 +114,9 @@ const Main = () => {
                                 <h1 className='text-light ps-1'>Welcome</h1>
                                 <h4 className='text-light ps-1'>Millions of movies, TV shows and people to discover. Explore now.</h4>
                             </div>
-                        <input className='search_item' placeholder='Search for movie, tv show,person...' type="search" 
+                        <input onChange={(e) => setSearch(e.target.value)} className='search_item' placeholder='Search for movie, tv show,person...' type="search" 
                         />
-                        <button className='search_tugma btn btn-info px-4'>Search</button>
+                        <Link to={`/search/:${search}`} state={{soz: search}} className='search_tugma btn btn-info px-4'>Search</Link>
                         </div>
                       </div>
                   </div>
